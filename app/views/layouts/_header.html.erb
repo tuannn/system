@@ -1,0 +1,65 @@
+<div id="wrapper">
+	<!-- BEGIN header -->
+	<div id="header">
+		<ul>
+			<li class="f">
+				<%= link_to 'Home', root_path %>
+			</li>
+			<li>
+				<%= link_to 'About Us', about_path %>
+			</li>
+
+			<li>
+				<%= link_to 'Contact Us', contact_path %>
+			</li>
+			<li>
+				<%= link_to 'My study', study_path %>
+			</li>
+		</ul>
+		<p class="links">
+
+			<% if user_signed_in? %>
+			Welcome: <strong><%= current_user.email %></strong>.
+			<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+			<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+			<% else %>
+			<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+			<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+			<% end %>
+		</p>
+		<div class="break"></div>
+		<div class="logo">
+			<h1><a href="http://all-free-download.com/free-website-templates/">The Web News</a></h1>
+			<p>
+				Free CSS Template
+			</p>
+		</div>
+		<div class="ad468x60">
+			<a href="http://all-free-download.com/free-website-templates/"><img src="images/ad468x60.gif" alt="" /></a>
+		</div>
+		<div class="break"></div>
+		<ol>
+			<li>
+				<a href="http://all-free-download.com/free-website-templates/">Advertising</a>
+			</li>
+			<li>
+				<a href="http://all-free-download.com/free-website-templates/">Entertainment</a>
+			</li>
+			<li>
+				<a href="http://all-free-download.com/free-website-templates/">Fashion</a>
+			</li>
+			<li>
+				<a href="http://all-free-download.com/free-website-templates/">Lifestyle</a>
+			</li>
+			<li>
+				<a href="http://all-free-download.com/free-website-templates/">Pictures</a>
+			</li>
+			<li>
+				<a href="http://all-free-download.com/free-website-templates/">Videos</a>
+			</li>
+		</ol>
+		<div class="break"></div>
+	</div>
+	<!-- END header -->
+	<!-- BEGIN content -->
+	<div id="content">

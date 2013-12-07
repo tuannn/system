@@ -1,0 +1,19 @@
+// CSS for study page
+#ibox {width: 500px; height: 300px; background: #FF0000}
+
+.selected{
+  background: #dddddd;
+}
+
+.highlight{
+  background-color: yellow;
+}
+
+#accordiondemo h3 {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  //background: #EFEFEF;
+  padding: 4px 8px;
+}
+.neoslideshow {position:relative; width:500px; height:260px;}
+.neoslideshow img {position:absolute;left:300; top:300;}
