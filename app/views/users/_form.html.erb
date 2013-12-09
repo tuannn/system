@@ -1,0 +1,26 @@
+<%= form_for @user do |f| %>
+
+<table class = "user_form">
+	<tr>
+		<td><%= f.label :email%></td>
+		<td><%= f.text_field :email%></td>
+	</tr>
+	<tr>
+		<td><%= f.label :role %></td>
+		<% if current_user.role == "admin"%>
+		<td><%= f.collection_select :role, User::ROLES, :to_s, :humanize %></td>
+		<% end %>
+		<% if current_user.role == "moderator"%>
+		<td><%= f.collection_select :role, User::MO_ROLES, :to_s, :humanize %></td>
+		<% end %>
+	</tr>
+	<tr>
+		<td><%= f.label :avatar%></td>
+		<td><%= f.file_field :avatar%></td>
+	</tr>
+	<tr>
+		<td colspan="2"><%= f.submit @user.new_record? ? "Create" : "Update"%></td>
+	</tr>
+</table>
+
+<% end %>

@@ -1,11 +1,14 @@
 System::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
+
   
   root 'staticpages#index'
   
   match '/about', to: 'staticpages#about', via: :get
   match '/contact', to: 'staticpages#contact', via: :get
-  match 'study', to: 'staticpages#study', via: :get
+  match '/study', to: 'staticpages#study', via: :get
+  
+  resources :users
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

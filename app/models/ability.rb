@@ -28,5 +28,15 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
+    @user = user || User.new # for guest
+    
+    case @user.role
+    when "admin"
+      can :manage, :all
+    when "moderator"
+      can :manage, User
+    else
+      can :read, :all     
+    end
   end
 end

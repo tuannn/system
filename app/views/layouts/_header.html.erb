@@ -35,7 +35,7 @@
 			</p>
 		</div>
 		<div class="ad468x60">
-			<a href="http://all-free-download.com/free-website-templates/"><img src="images/ad468x60.gif" alt="" /></a>
+			<%= link_to image_tag('ad468x60.gif'), "#"%>
 		</div>
 		<div class="break"></div>
 		<ol>
@@ -57,7 +57,21 @@
 			<li>
 				<a href="http://all-free-download.com/free-website-templates/">Videos</a>
 			</li>
+
+			<% if user_signed_in? %>
+			<% if can? :create, @user %>
+
+			<li>
+				 <%= link_to "Account Management", users_path %>
+			</li>
+			<% end %>
+			<li>
+				<%= link_to "Profile", user_path(current_user) %>
+			</li>
+
+			<% end %>
 		</ol>
+
 		<div class="break"></div>
 	</div>
 	<!-- END header -->

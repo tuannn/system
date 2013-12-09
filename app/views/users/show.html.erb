@@ -1,0 +1,30 @@
+<table class = "user_form">
+	<tr>
+		<td rowspan="4">
+		<div class ="userAvatar">
+			<%= image_tag(@user.avatar_url)%>
+		</div></td>
+	</tr>
+	<tr>
+		<td><%= label_tag :email%></td>
+		<td><%= @user.email %></td>
+	</tr>
+	<tr>
+		<td><%= label_tag :role %></td>
+		<td><%= @user.role.to_s.humanize %></td>
+	</tr>
+	<% if can? :update, @user %>
+	<tr align = "center">
+		<td colspan="3"><%= link_to "Edit", edit_user_path(@user) %></td>
+	</tr>
+	<% else %>
+	
+	<% if current_user == @user %>
+	<tr align = "center">
+		<td colspan="3"><%= link_to "Edit", edit_user_path(@user) %></td>
+	</tr>
+	<% end %>
+	
+	<% end %>
+</table>
+

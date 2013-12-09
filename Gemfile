@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'cancan'
 gem 'rolify'
+gem 'carrierwave'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -35,6 +36,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+#gem 'protected_attributes'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
