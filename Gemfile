@@ -10,6 +10,7 @@ gem 'devise'
 gem 'cancan'
 gem 'rolify'
 gem 'carrierwave'
+gem 'will_paginate'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

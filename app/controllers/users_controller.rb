@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 class UsersController < ApplicationController
   load_and_authorize_resource :except => [:create, :update]
   
@@ -9,8 +10,8 @@ class UsersController < ApplicationController
   end
   
   def index
+    @user = User.order(:email).all.paginate(page: params[:page], per_page: 5)
     respond_to do |format|
-      @user = User.all
       format.html
     end
   end
