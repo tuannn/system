@@ -7,8 +7,11 @@ System::Application.routes.draw do
   match '/about', to: 'staticpages#about', via: :get
   match '/contact', to: 'staticpages#contact', via: :get
   match '/study', to: 'staticpages#study', via: :get
+  match '/shopindex', to: 'staticpages#shopindex', via: :get
   
   resources :users
+  resources :shops
+  resources :shop_categories
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

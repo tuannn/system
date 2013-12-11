@@ -38,39 +38,85 @@
 			<%= link_to image_tag('ad468x60.gif'), "#"%>
 		</div>
 		<div class="break"></div>
-		<ol>
-			<li>
-				<a href="http://all-free-download.com/free-website-templates/">Advertising</a>
-			</li>
-			<li>
-				<a href="http://all-free-download.com/free-website-templates/">Entertainment</a>
-			</li>
-			<li>
-				<a href="http://all-free-download.com/free-website-templates/">Fashion</a>
-			</li>
-			<li>
-				<a href="http://all-free-download.com/free-website-templates/">Lifestyle</a>
-			</li>
-			<li>
-				<a href="http://all-free-download.com/free-website-templates/">Pictures</a>
-			</li>
-			<li>
-				<a href="http://all-free-download.com/free-website-templates/">Videos</a>
-			</li>
+		<div id="menu">
+			<ul class="menu">
+				<li>
+					<a href="<%= root_path %>" class="parent"><span>Home</span></a>
 
-			<% if user_signed_in? %>
-			<% if can? :create, @user %>
+				</li>
+				<li>
+					<a href="#" class="parent"><span>Shops</span></a>
+					<div>
+						<ul>
+							<% ShopCategory.order(:name).all.each do |category| %>
+							<li>
+								<a href="<%= shopindex_path %>"><span><%= category.name %></span></a>
 
-			<li>
-				 <%= link_to "Account Management", users_path %>
-			</li>
-			<% end %>
-			<li>
-				<%= link_to "Profile", user_path(current_user) %>
-			</li>
+							</li>
+							<% end %>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="#"><span>Help</span></a>
+				</li>
+				<li>
+					<a href="#"><span>Contacts</span></a>
+				</li>
+				<% if user_signed_in? %>
+				<li>
+					<span>Management</span>
+					<div>
+						<ul>
+							<li>
+								<a href="#" class="parent"><span>Account management</span></a>
+								<div>
+									<ul>
+										<li>
+											<%= link_to "Accounts", users_path%>
+										</li>
+										<li>
+											<%= link_to "New account", new_user_path%>
+										</li>
+									</ul>
+								</div>
+							</li>
+							
+							<li>
+								<a href="#" class="parent"><span>Shops management</span></a>
+								<div>
+									<ul>
+										<li>
+											<%= link_to "Shops", shops_path%>
+										</li>
+										<li>
+											<%= link_to "New shop", new_shop_path%>
+										</li>
+										<li>
+											<%= link_to "Shop categories", shop_categories_path%>
+										</li>
+										<li>
+											<%= link_to "New shop category", new_shop_category_path%>
+										</li>
+									</ul>
+								</div>
 
-			<% end %>
-		</ol>
+							</li>
+							
+							<li>
+								<a href="#"><span>Sub Item 3</span></a>
+							</li>
+
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="<%= user_path(current_user) %>"><span>Profile</span></a>
+				</li>
+				<% end %>
+			</ul>
+
+		</div>
 
 		<div class="break"></div>
 	</div>

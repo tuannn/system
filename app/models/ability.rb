@@ -35,6 +35,9 @@ class Ability
       can :manage, :all
     when "moderator"
       can :manage, User
+      can :manage, Shop
+    when "member"  
+      can :manage, Shop
     else
       can :read, :all     
     end

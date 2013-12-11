@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @user = User.order(:email).all.paginate(page: params[:page], per_page: 5)
+    @user = User.order(:email).all.paginate(page: params[:page], per_page: 10)
     respond_to do |format|
       format.html
     end

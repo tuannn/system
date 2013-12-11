@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
+  has_many :shops
+  
   ROLES = %w[admin moderator member banned]
   MO_ROLES= %w[moderator member banned]
   
