@@ -1,0 +1,27 @@
+<table class="showshop">
+	<tr>
+		<td rowspan="5" >
+		<div class="shopimage">
+			<%= image_tag(@shop.avatar_url)%>
+		</div></td>
+	</tr>
+	<tr>
+		<td colspan="2"><h2><%= @shop.name %></h2></td>
+	</tr>
+	<tr>
+		<td>Address</td>
+		<td><%= @shop.address %></td>
+	</tr>
+	<tr>
+		<td>Email</td>
+		<td><%= @shop.email %></td>
+	</tr>
+	<tr>
+		<td>Tel</td>
+		<td><%= @shop.tel %></td>
+	</tr>
+	<tr>
+		<td colspan="3"><%= @shop.description %></td>
+
+	</tr>
+</table>

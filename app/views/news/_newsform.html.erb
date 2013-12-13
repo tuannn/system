@@ -1,0 +1,23 @@
+<%= form_for @news do |f| %>
+<table class="newsform">
+	<tr>
+		<td><%= f.label :title %></td>
+		<td><%= f.text_field :title, size: 80 %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :content %></td>
+		<td><%= f.text_area :content, cols: 95, rows: 20 %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :image %></td>
+		<td><%= f.file_field :avatar %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :shop %></td>
+		<td><%= f.collection_select :shop_id, current_user.shops, :id, :name %></td>
+	</tr>
+	<tr>
+		<td colspan="2"><%= f.submit @news.new_record? ? "Create" : "Update" %></td>
+	</tr>
+</table>
+<% end %>

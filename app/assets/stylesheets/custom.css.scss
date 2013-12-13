@@ -25,3 +25,29 @@
   padding: 10px;
 }
 
+.categorywrapper{
+  
+}
+
+#categoryname{
+  //background-color: rgb(102, 102, 102);
+  padding: 5px;
+  border-bottom: 1px dotted #efefef;
+}
+
+.catehighlight a{
+  color: rgb(86, 86, 86);
+}
+.smallthumb{
+  width: 70px;
+  height: 70px;
+  float: left;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.clearhighlight{
+  clear: both;
+  padding: 5px;
+  border-top: 1px dotted #efefef;
+}

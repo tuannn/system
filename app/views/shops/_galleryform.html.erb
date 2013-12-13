@@ -1,0 +1,17 @@
+<div class="showimage">
+
+	<% @galleries.each do |imageitem| %>
+	<ul align="center" id="imageitem" title="test">
+		<li class="imageitem" title=<%= imageitem.name %>>
+			<%= image_tag(imageitem.avatar_url) %>
+			<label id="lbimagedescription" hidden="true"><%= imageitem.description %></label>
+		</li>
+	</ul>
+	<% end %>
+</div>
+<div id="addimage">
+	<%= link_to "Add image", new_shop_gallery_path(id: @shop.id), title: "click to add imgae for this shop" %>
+</div>
+<%= will_paginate @galleries %>
+<div class="clearall"></div>
+

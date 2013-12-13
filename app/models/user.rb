@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :shops
-  
+  has_many :news
   ROLES = %w[admin moderator member banned]
   MO_ROLES= %w[moderator member banned]
   

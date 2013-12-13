@@ -74,5 +74,6 @@ $(function() {
 			$('#slideshow img:eq(' + count + ')').show();
 		}
 	}, 4000);
-
+	
+	
 });

@@ -1,0 +1,31 @@
+<%= form_for @shopgallery do |f| %>
+<table class="uploadform">
+	<tr>
+		<td><%= f.label :shop %></td>
+		<% if @shop %>
+		<td><%= f.select :shop_id, [[@shop.name, @shop.id]] %></td>
+		<% else %>
+		<% if current_user.role == 'admin' || current_user.role == 'moderator'%>
+		<td><%= f.collection_select :shop_id, Shop.order(:name).all, :id, :name %></td>
+		<% else %>
+		<td><%= f.collection_select :shop_id, current_user.shops.order(:name).all, :id, :name %></td>
+		<% end %>
+		<% end %>
+	</tr>
+	<tr>
+		<td><%= f.label :name %></td>
+		<td><%= f.text_field :name %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :description %></td>
+		<td><%= f.text_area :description %></td>
+	</tr>
+	<tr>
+		<td><%= f.label :file %></td>
+		<td><%= f.file_field :avatar %></td>
+	</tr>
+	<tr>
+		<td colspan="2"><%= f.submit @shopgallery.new_record? ? "Upload" : "Edit" %></td>
+	</tr>
+</table>
+<% end %>

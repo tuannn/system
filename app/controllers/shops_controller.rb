@@ -16,6 +16,7 @@ class ShopsController < ApplicationController
     end
     respond_to do |format|
       format.html
+      format.js
     end
   end
   
@@ -27,7 +28,17 @@ class ShopsController < ApplicationController
         format.html { redirect_to shops_path, notice: "Shop was created" }
       else
         format.html { render action: :new }
+        format.js
       end
+    end
+  end
+  
+  def show
+    @shop = Shop.find(params[:id])
+    @galleries = @shop.shop_galleries.paginate(page: params[:page], per_page: 6)
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
