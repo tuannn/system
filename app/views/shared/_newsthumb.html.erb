@@ -1,0 +1,7 @@
+<% if @news %>
+<div class="catehighlight">
+	<a href="#"><%= image_tag(@news.avatar_url, class: "smallthumb") %></a>
+	<h4><a href="#"><%= @news.title[0, 64] %></a></h4>
+</div>
+
+<% end %>

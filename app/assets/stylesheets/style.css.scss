@@ -158,7 +158,8 @@ img {
 			line-height: 1.4em;
 		}
 		#content .post .thumb {
-			height: 92px;
+			height: 120px;
+			width: 250px;
 			overflow: hidden;
 			padding: 5px;
 			background-color: #EEEEEE;
@@ -170,7 +171,8 @@ img {
 				overflow: hidden;
 			}
 			#content .post .thumb img {
-				width: 247px;
+				width: 250px;
+				height: 120px;
 			}
 	#content .postnav {
 		clear: both;

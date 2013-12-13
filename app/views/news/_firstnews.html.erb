@@ -1,0 +1,17 @@
+<% if @news %>
+<div class="post">
+	<!-- begin post -->
+	<div class="thumb">
+		<a href="#"><%= image_tag(@news.avatar_url) %></a>
+	</div>
+	<h3><a href="#"><%= @news.title[0, 64] %></a></h3>
+	<p class="date">
+		<%= @news.created_at %>
+	</p>
+	<p>
+		<%= @news.content[0, 256] %>
+	</p>
+	<a class="continue" href="#">Continue Reading</a>
+</div>
+<!-- end post -->
+<% end %>

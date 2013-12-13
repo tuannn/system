@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212093514) do
+ActiveRecord::Schema.define(version: 20131213024112) do
 
   create_table "news", force: true do |t|
     t.string   "title"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20131212093514) do
     t.string   "address"
     t.string   "tel"
     t.string   "avatar"
-    t.integer  "shop_category"
+    t.integer  "shop_category_id"
     t.integer  "user_id"
   end
 

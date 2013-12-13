@@ -6,7 +6,7 @@ class Shop < ActiveRecord::Base
   has_many :shop_galleries
   has_many :news
   
-  validates :name, :description, :shop_category, :email, presence:true
+  validates :name, :description, :shop_category_id, :email, presence:true
     
   mount_uploader :avatar, AvatarUploader
   
