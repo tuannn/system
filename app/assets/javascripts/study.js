@@ -75,5 +75,20 @@ $(function() {
 		}
 	}, 4000);
 	
+	$( "#draggable" ).draggable();
+	
+	$( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+    
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+    
+    $( "#tabs" ).tabs();
 	
 });

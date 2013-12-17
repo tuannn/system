@@ -18,7 +18,32 @@
 .neoslideshow {position:relative; width:500px; height:260px;}
 .neoslideshow img {position:absolute;left:300; top:300;}
 
+#draggable { 
+  width: 150px; 
+  height: 150px; 
+  padding: 0.5em; 
+  background-color: yellow;
 
+}
+#droppable { 
+  width: 150px; 
+  height: 150px; 
+  padding: 0.5em; 
+  //float: left; 
+  margin: 10px; 
+  background-color: red;
+}
+
+#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+#sortable li span { position: absolute; margin-left: -1.3em; }
+
+#tabs li {
+  display: inline;
+  background-color: blue;
+  border-right: 1px solid #efefef;
+}
+  
 //CSS for system
 
 .basecontent{
