@@ -11,8 +11,10 @@ class UsersController < ApplicationController
   
   def index
     @user = User.order(:email).all.paginate(page: params[:page], per_page: 10)
+    @users = User.order(:email).all
     respond_to do |format|
       format.html
+      format.js { render :json => @users }
     end
   end
   
@@ -54,9 +56,16 @@ class UsersController < ApplicationController
     end
   end
   
+  def findemail
+    @findresult = User.findemail(params[:email]);
+    respond_to do |format|
+      format.js { render :json => @findresult }
+    end
+  end
+  
 private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :role, :avatar)
+    params.require(:user).permit(:email, :password, :password_confirmation, :role, :avatar, :state)
   end
 
 end

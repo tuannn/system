@@ -45,12 +45,12 @@
 
 				</li>
 				<li>
-					<a href="#" class="parent"><span>Shops</span></a>
+					<a href="<%= shopindex_path %>" class="parent"><span>Shops</span></a>
 					<div>
 						<ul>
 							<% ShopCategory.order(:name).all.each do |category| %>
 							<li>
-								<a href="<%= shopindex_path %>"><span><%= category.name %></span></a>
+								<a href="<%= shopindex_path(id: category.id) %>"><span><%= category.name %></span></a>
 
 							</li>
 							<% end %>

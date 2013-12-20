@@ -1,0 +1,7 @@
+<% if @shop %>
+<div class="catehighlight">
+	<a href="#"><%= link_to image_tag(@shop.avatar_url, class: "smallthumb"), shop_path(@shop) %></a>
+	<h4><a href="<%= shop_path(@shop)%>"><%= @shop.name %></a></h4>
+</div>
+
+<% end %>

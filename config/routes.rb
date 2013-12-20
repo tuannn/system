@@ -9,7 +9,10 @@ System::Application.routes.draw do
   match '/study', to: 'staticpages#study', via: :get
   match '/shopindex', to: 'staticpages#shopindex', via: :get
   
-  resources :users
+  resources :users do
+    get 'findemail', on: :collection
+  end
+  
   resources :shops
   resources :shop_categories
   resources :shop_galleries

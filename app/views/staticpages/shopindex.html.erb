@@ -1,0 +1,22 @@
+<div class = "basecontent">
+	<% if !@shopcategory.instance_of?(Array) %>
+	  <h2> <%= @shopcategory.name %></h2><div class="clearhighlight"></div>
+	  <% @shops.each do |shop| %>
+	    <% @shop = shop %>
+	    <%= render('shared/shopthumb')%> <div class="clearhighlight"></div>
+	    <%= will_paginate @shops %>
+	  <% end %>
+	  
+	<% else %>
+	  <% @shopcategory.each do |shopcategory| %>
+	    <% @shops = shopcategory.shops.order(:created_at).limit(5) %>
+	  
+	    <h2> <%= shopcategory.name %></h2><div class="clearhighlight"></div>
+	    <% @shops.each do |shop| %>
+	      <% @shop = shop %>
+	      <%= render('shared/shopthumb')%> <div class="clearhighlight"></div>
+	    <% end %>
+	    <div> <p align= right> <%= link_to 'View all', shopindex_path(id: shopcategory.id), class: "continue" %></p> </div>
+	  <% end %>
+	<% end %>
+</div>

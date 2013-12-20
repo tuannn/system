@@ -14,6 +14,7 @@ gem 'will_paginate'
 gem 'jquery-turbolinks'
 gem 'twitter-bootstrap-rails'
 gem 'execjs'
+gem 'state_machine'
 #gem 'therubyracer'
 
 

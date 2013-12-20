@@ -39,5 +39,67 @@ $(function() {
 		
 	});
 	
+	// for user data grid
+	$.ajax({
+    		type : 'get',
+    		url : "/users/",
+    		dataType : 'json',
+    		success : function(response) {
+    			var obj = {};
+    			obj.width = 600;
+    			obj.flexHeight = true;
+    			obj.title = "Users list";
+    			obj.bottomVisible = true;
+    			obj.selectionModel = { mode: 'single' };
+    			obj.editable = false;
+    			obj.columnBorders = true;
+    			obj.scrollModel = { horizontal: false };
+    			obj.colModel = [
+        						{title:"Email", width:200, dataType:"string", dataIndx: "email"},
+        						{title:"Roles", width:150, dataType:"string", dataIndx: "role"}
+        						];
+    			obj.dataModel = {
+    				location: 'local',
+    				sorting: "local",
+    				paging: "local",
+    				dataType: "JSON",
+    				data:response
+    				};
+    				
+    			$("#grid_user").pqGrid(obj); 
+    		}	
+    	});
+    	 
+    // end data grid
+    
+    // handle for checking email is exited?
+    $('#signupform #user_email').keyup(function() {
+    	$email = $(this);
+    	$.ajax({
+    		type : 'get',
+    		url : "/users/findemail",
+    		data : "email=" + $email.val(),    
+    		dataType : 'json',
+    		success : function(response) {
+    			var count=0;
+    			$('#autoresult p').text("");
+    			$.each(response, function(userIndex, user) {
+    					$('#autoresult p').append(user['email'] + "<br>");
+    					count+=1;
+    				});
+    				
+    			if(count == 0){
+    				$('#autoresult p').text("Email co the su dung");
+    			}
+    			else{
+    				$('#autoresult p').text("Email da ton tai");
+    			}    			
+    		}	
+    	});
+    	
+    	    	
+    });
+    // end of handle check email is existed?
+	
 });
 

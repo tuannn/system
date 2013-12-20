@@ -1,12 +1,5 @@
-<table>
-
-	<th><label>Shop</label></th>
-	<th><label>Description</label></th>
-	<% @shops.each do |shop| %>
-	<tr>
-		<td><label><%= link_to shop.name, shop_path(shop) %></label></td>
-		<td><label><%= shop.description %></label></td>
-
-	</tr>
-	<% end %>
-</table>
+<% @shops.each do |shop| %>
+<% @shop = shop %>
+<%= render('shared/shopthumb')%>
+<div class="clearhighlight"></div>
+<% end %>
