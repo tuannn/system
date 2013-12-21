@@ -1,0 +1,7 @@
+<div class="shopnews">
+	<% @news_all.each do |news| %>
+	<% @news = news %>
+	<%= render("shared/newsthumb")%>
+	<% end %>
+	<%= will_paginate @news_all %>
+</div>

@@ -27,8 +27,15 @@ class NewsController < ApplicationController
   end
   
   def show
+    @news = News.find_by_id(params[:id])
     respond_to do |format|
-      format.html
+      if @news
+        @othernews = News.othernews(@news.id).order(:created_at).paginate(page: params[:page], per_page: 20)
+        format.html 
+      else
+        format.html { redirect_to root_path, notice: "News is not existed" }
+      end
+      
     end
   end
   

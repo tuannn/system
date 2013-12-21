@@ -4,10 +4,50 @@
 .userlist {
   padding: 10px;
 }
+
+.userlist p {
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+.userlist h2 {
+  padding: 0px 0px 10px;
+}
 .userlist table {
-  border: 1px solid #ececec ;
+  border: 1px solid #ececec;
 }
 .userlist td {
-  //border: 1px solid #ececec ;
-  //padding: 10px;
+  width: 314px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #efefef;
+}
+
+.userlist th {
+  border-bottom: 1px solid #efefef;
+  height: 25px;
+  background-color: #efefef;
+  
+}
+
+#signupform {
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-right: 20px;
+}
+#signupform h2 {
+  background-color: #efefef;
+  margin-bottom: 5px;
+}
+
+#signupform .user_form td {
+  padding: 10px;
+}
+#signupform .user_form tr {
+  padding: 5px;
+}
+
+#signupform .user_form #user_email {
+  width: 250px;
+  margin-bottom: 10px;
+  height: 20px;
 }

@@ -1,0 +1,20 @@
+<div class="shopinfor">
+	<h2><%= @shop.name %></h2>
+	<%= render('showform') %>
+</div>
+<div id="shopbreak"></div>
+
+<h4 class="extendtitle" id="attachtitle" title="Click here to expand/collapse information about attachfile"> Attach files </h4>
+<div id="attachform">
+	<%= render('attachform') %>
+</div>
+<div id="shopbreak"></div>
+
+<h4 class="extendtitle" id="gallerytitle" title="Click here to expand/collapse information about gallery of shop"> Shop gallery </h4>
+<div id="showimage">
+	<%= render('showimage')%>
+</div>
+<div id="galleryform">
+	<%= render('galleryform') %>
+</div>
+<div id="shopbreak"></div>

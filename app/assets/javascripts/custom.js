@@ -1,11 +1,15 @@
 $(document).ready(function() {
 	//$('#attachform').slideUp();
 	//$('#galleryform').slideUp();
-	$('#showimage').hide();
+	
 	
 });
 
 $(function() {
+	
+	// hide show image form when page load
+	$('#showimage').hide();
+	// end hide show image form when page load
 	
 	// handle attach file on shop page
 	$('#attachtitle').click(function() {
@@ -82,17 +86,17 @@ $(function() {
     		dataType : 'json',
     		success : function(response) {
     			var count=0;
-    			$('#autoresult p').text("");
+    			$('#autoresult').text("");
     			$.each(response, function(userIndex, user) {
-    					$('#autoresult p').append(user['email'] + "<br>");
+    					$('#autoresult').append(user['email'] + "<br>");
     					count+=1;
     				});
     				
     			if(count == 0){
-    				$('#autoresult p').text("Email co the su dung");
+    				$('#autoresult').text("Email co the su dung");
     			}
     			else{
-    				$('#autoresult p').text("Email da ton tai");
+    				$('#autoresult').text("Email da ton tai");
     			}    			
     		}	
     	});
@@ -100,6 +104,15 @@ $(function() {
     	    	
     });
     // end of handle check email is existed?
+    
+    // handle shop tabs background color
+    $('#tabs li').first().css('background-color', 'white');
+    
+    $('#tabs li').click(function() {
+    	$clickli = $(this);
+    	$('#tabs li').css('background-color', '#efefef');
+    	$clickli.css('background-color', 'white');
+    });
 	
 });
 

@@ -1,22 +1,31 @@
 <div class="basecontent">
-	<div class="shopinfor">
-		<h2><%= @shop.name %></h2>
-		<%= render('showform') %>
-	</div>
-	<div id="shopbreak"></div>
+	<div id="tabs">
+		<ul>
+			<li>
+				<a href="#overview">Overview</a>
+			</li>
+			<li>
+				<a href="#news">News</a>
+			</li>
+			<li>
+				<a href="#dish">Dish</a>
+			</li>
+		</ul>
+		<div class="clearhighlight"></div>
+		<div id="overview">
+			<%= render('shop_overview') %>
+		</div>
+		<div id="news">
+			<p>
+				<%= render('shop_news')%>
+			</p>
+		</div>
 
-	<h4 class="extendtitle" id="attachtitle" title="Click here to expand/collapse information about attachfile"> Attach files </h4>
-	<div id="attachform">
-		<%= render('attachform') %>
+		<div id="dish">
+			<p>
+				tab3
+			</p>
+		</div>
 	</div>
-	<div id="shopbreak"></div>
 
-	<h4 class="extendtitle" id="gallerytitle" title="Click here to expand/collapse information about gallery of shop"> Shop gallery </h4>
-	<div id="showimage">
-		<%= render('showimage')%>
-	</div>
-	<div id="galleryform">
-		<%= render('galleryform') %>
-	</div>
-	<div id="shopbreak"></div>
 </div>

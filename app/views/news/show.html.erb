@@ -1,0 +1,15 @@
+<div class="basecontent">
+	<%= render('shared/news_show') %>
+	<div class="clearall"></div>
+	<div class="othernews">
+		<h3>Other news</h3>
+		<div class="clearhighlight"></div>
+		<% @othernews.each do |news| %>
+		<% @news = news %>
+		<%= render("shared/newsthumb")%>
+		<div class="clearall"></div>
+		<% end %>
+
+		<%= will_paginate @othernews %>
+	</div>
+</div>

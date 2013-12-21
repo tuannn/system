@@ -65,6 +65,21 @@
   text-align: center;
   
 }
+#tabs li {
+  display: inline;
+  padding: 5px;
+  padding-bottom: 0px;
+  border: 1px solid #ffffff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #efefef;
+  font-weight: bold;
+}
+
+#tabs li:hover {
+   background-color: #efefef;
+}
+
 .clearall{
   clear: left;
   border-top: 1px dotted #efefef;

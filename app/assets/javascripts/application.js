@@ -17,5 +17,7 @@
 
 //= requier twitter/bootstrap
 //= require_tree .
+//= require ckeditor/override
+//= require ckeditor/init
 
 

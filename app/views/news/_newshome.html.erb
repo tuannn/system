@@ -1,5 +1,5 @@
 <% if @shopcategory %>
-<% @news = @shopcategory.news.first %>
+<% @news = @shopcategory.news.order(:created_at).last %>
 <!-- begin category wrapper -->
 <div class="categorywrapper">
 	<h2 id="categoryname"><%= @shopcategory.name %></h2>
@@ -8,14 +8,13 @@
 	<!-- begin highlight -->
 	<div class="post">
 
-		<% @shopcategory.news.limit(4).offset(1).each do |news| %>
+		<% @shopcategory.news.order("created_at DESC").limit(4).offset(1).each do |news| %>
 		<% @news = news %>
 
 		<%= render('shared/newsthumb') %>
 		<div class="clearhighlight"></div>
 		<% end %>
 
-		<div class="clearhighlight"></div>
 		<a class="continue" href="#">View alls</a>
 	</div>
 	<!-- end post -->

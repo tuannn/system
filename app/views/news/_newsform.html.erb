@@ -6,7 +6,7 @@
 	</tr>
 	<tr>
 		<td><%= f.label :content %></td>
-		<td><%= f.text_area :content, cols: 95, rows: 20 %></td>
+		<td><%= f.cktext_area :content, cols: 90, rows: 30, :input_html => { :ckeditor => {:toolbar => 'mini'} } %></td>
 	</tr>
 	<tr>
 		<td><%= f.label :image %></td>

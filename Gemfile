@@ -15,6 +15,9 @@ gem 'jquery-turbolinks'
 gem 'twitter-bootstrap-rails'
 gem 'execjs'
 gem 'state_machine'
+gem 'ckeditor'
+gem "paperclip"
+gem "mini_magick"
 #gem 'therubyracer'
 
 
@@ -42,6 +45,10 @@ gem 'jbuilder'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development do
+  gem 'webrick'
 end
 
 #gem 'protected_attributes'

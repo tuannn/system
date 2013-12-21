@@ -1,0 +1,16 @@
+<% if @news %>
+<div class='newsshow'>
+	<h2>Shop: <%= link_to @news.shop.name, shop_path(@news.shop) %></h2>
+	<div class="clearhighlight"></div>	
+	<%= image_tag(@news.avatar_url) %>
+	<h3>
+		<%= @news.title.html_safe %>
+	</h3>
+	<p class="date">
+		Created at: <%= @news.created_at %>
+	</p>
+	<p>
+		<%= @news.content.html_safe %>
+	</p>
+</div>
+<% end %>

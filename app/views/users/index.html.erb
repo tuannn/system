@@ -1,7 +1,8 @@
 <div class = "userlist">
+	<h2>List of users</h2><p align="right"><%= link_to "Create new", new_user_path %></p>	
 	<%= will_paginate @user %>	
 	<%= render('userlist')%>
 	<%= will_paginate @user %>	
 </div>
 
-<div id="grid_user" class="userlist"> </div>
+<div id="grid_user"> </div>

@@ -2,16 +2,16 @@
 <div class="post">
 	<!-- begin post -->
 	<div class="thumb">
-		<a href="#"><%= image_tag(@news.avatar_url) %></a>
+		<a href="<%= news_path(@news) %>"><%= image_tag(@news.avatar_url) %></a>
 	</div>
-	<h3><a href="#"><%= @news.title[0, 64] %></a></h3>
+	<h3><a href="<%= news_path(@news) %>"><%= @news.title.html_safe %></a></h3>
 	<p class="date">
 		<%= @news.created_at %>
 	</p>
 	<p>
-		<%= @news.content[0, 256] %>
+		<%= @news.content[0, 256].html_safe %>
 	</p>
-	<a class="continue" href="#">Continue Reading</a>
+	<a class="continue" href="<%= news_path(@news) %>">Continue Reading</a>
 </div>
 <!-- end post -->
 <% end %>

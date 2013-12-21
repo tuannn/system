@@ -3,7 +3,7 @@
 <table class = "user_form">
 	<tr>
 		<td><%= f.label :email%></td>
-		<td><%= f.text_field :email%></td>
+		<td><%= f.text_field :email%> <p id="autoresult"></p></td>
 	</tr>
 	<tr>
 		<td><%= f.label :role %></td>
@@ -19,7 +19,7 @@
 		<td><%= f.file_field :avatar%></td>
 	</tr>
 	<tr>
-		<td colspan="2"><%= f.submit @user.new_record? ? "Create" : "Update"%></td>
+		<td colspan="2" align="center"><%= link_to "Index", users_path, {"data-icon" => "button"} %><%= f.submit @user.new_record? ? "Create" : "Update"%></td>
 	</tr>
 </table>
 
