@@ -1,7 +1,16 @@
 class NewsController < ApplicationController
   def index
     respond_to do |format|
-      format.html
+      if signed_in?
+        if current_user.role == "admin"
+          @newsall = News.order('created_at DESC').all.paginate(page: params[:page], per_page: 20)
+        else
+          @newsall = current_user.news
+        end
+        format.html
+      else
+        format.html { redirect_to root_path, notice: "You have not permission to view this page" }
+      end      
     end
   end
   
@@ -40,19 +49,30 @@ class NewsController < ApplicationController
   end
   
   def edit
-     respond_to do |format|
+    @news = News.find_by_id(params[:id])
+    respond_to do |format|
       format.html
     end
   end
   
   def update
-     respond_to do |format|
-      format.html
+    news = News.find_by_id(params[:id])
+    respond_to do |format|
+    if news
+      news.update_attributes(news_params)
+      if news.save
+        format.html { redirect_to news_index_path, notice: " News was updated" }
+      else
+        format.html { render :edit }
+      end
+    else
+      format.html { redirect_to news_index_path, notice: "Somothing is wrong "}
+    end
     end
   end
   
   def destroy
-     respond_to do |format|
+    respond_to do |format|
       format.html
     end
   end

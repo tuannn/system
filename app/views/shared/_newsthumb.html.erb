@@ -6,5 +6,15 @@
 		<%= @news.created_at %>
 	</p>
 </div>
-
+<% if current_user == @news.user %>
+<div class="break"></div>
+<div id="newspanel">
+	<p>
+		<%= link_to "Edit", edit_news_path(@news) %>
+	</p>
+	<p>
+		<%= link_to "Delete", "#" %>
+	</p>
+</div>
+<% end %>
 <% end %>

@@ -1,0 +1,11 @@
+<div class = "newsall">
+	<h2> List of news</h2>
+	<p align="right" id="addnews"><%= link_to "Add new", new_news_path %></p>
+	<div class="clearhighlight"></div>
+	<% @newsall.each do |news| %>
+	<% @news = news%>
+
+	<%= render("shared/newsthumb")%>
+	<div class="clearhighlight"></div>
+	<% end %>
+</div>
