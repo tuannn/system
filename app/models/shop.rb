@@ -5,6 +5,7 @@ class Shop < ActiveRecord::Base
   
   has_many :shop_galleries
   has_many :news
+  has_many :shop_attachments
   
   validates :name, :description, :shop_category_id, :email, presence:true
     

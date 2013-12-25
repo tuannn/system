@@ -1,3 +1,23 @@
-attach file
-
-attach file
+<div id='attachmentshow'>
+	<% if @attachments.empty? %>
+	<p>
+		No attachment file
+	</p>
+	<% else %>
+	<table class="attachmentshow">
+		<% @attachments.each do |attachment|%>
+		<tr>
+			<td><%= link_to attachment.attachfile_file_name, attachment.attachfile.url, target: "_blank" %></td>
+			<td><%= attachment.description %></td>
+		</tr>
+		<% end %>
+	</table>
+	<% end %>
+	<% if signed_in? %>
+	<% if current_user == @shop.user || current_user.role == "admin" %>
+	<p align="right">
+		<%= link_to "New", new_shop_shop_attachment_path(@shop)%>
+	</p>
+	<% end %>
+	<% end %>
+</div>

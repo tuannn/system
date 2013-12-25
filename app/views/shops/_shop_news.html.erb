@@ -2,6 +2,7 @@
 	<% @news_all.each do |news| %>
 	<% @news = news %>
 	<%= render("shared/newsthumb")%>
+	<div class="clearhighlight"></div>
 	<% end %>
 	<%= will_paginate @news_all %>
 </div>

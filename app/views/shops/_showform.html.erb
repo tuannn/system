@@ -6,7 +6,12 @@
 		</div></td>
 	</tr>
 	<tr>
-		<td colspan="2"><h2><%= @shop.name %></h2></td>
+		<td colspan="2"><h2><%= @shop.name %>
+		<% if signed_in? %>
+		<% if current_user == @shop.user || current_user.role == "admin" %>
+		<%= link_to "edit", "#", id: "shopname" %>
+		<% end %>
+		<% end %> </h2></td>
 	</tr>
 	<tr>
 		<td>Address</td>

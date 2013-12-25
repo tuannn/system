@@ -9,9 +9,13 @@
 	</ul>
 	<% end %>
 </div>
+<% if signed_in? %>
+<% if current_user == @shop.user || current_user.role == "admin" %>
 <div id="addimage">
 	<%= link_to "Add image", new_shop_gallery_path(id: @shop.id), title: "click to add imgae for this shop" %>
 </div>
+<% end %>
+<% end %>
 <%= will_paginate @galleries %>
 <div class="clearall"></div>
 

@@ -14,7 +14,9 @@ System::Application.routes.draw do
     get 'findemail', on: :collection
   end
   
-  resources :shops
+  resources :shops do
+    resources :shop_attachments, on: :member
+  end
   resources :shop_categories
   resources :shop_galleries
   resources :news

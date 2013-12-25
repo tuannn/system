@@ -18,6 +18,7 @@ gem 'state_machine'
 gem 'ckeditor'
 gem "paperclip"
 gem "mini_magick"
+#gem "imagemagick"
 #gem 'therubyracer'
 
 

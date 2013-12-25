@@ -29,109 +29,16 @@
 		</p>
 		<div class="break"></div>
 		<div class="logo">
-			<h1><a href="http://all-free-download.com/free-website-templates/">The Web News</a></h1>
+			<h1><a href="<%= root_path %>">BETOWAKARU</a></h1>
 			<p>
-				Free CSS Template
+				Viet Nam Infor
 			</p>
 		</div>
 		<div class="ad468x60">
 			<%= link_to image_tag('ad468x60.gif'), "#"%>
 		</div>
 		<div class="break"></div>
-		<div id="menu">
-			<ul class="menu">
-				<li>
-					<a href="<%= root_path %>" class="parent"><span>Home</span></a>
-
-				</li>
-				<li>
-					<a href="<%= shopindex_path %>" class="parent"><span>Shops</span></a>
-					<div>
-						<ul>
-							<% ShopCategory.order(:name).all.each do |category| %>
-							<li>
-								<a href="<%= shopindex_path(id: category.id) %>"><span><%= category.name %></span></a>
-
-							</li>
-							<% end %>
-						</ul>
-					</div>
-				</li>
-				<li>
-					<a href="#"><span>Help</span></a>
-				</li>
-				<li>
-					<a href="#"><span>Contacts</span></a>
-				</li>
-				<% if user_signed_in? %>
-				<li>
-					<span>Management</span>
-					<div>
-						<ul>
-							<li>
-								<a href="#" class="parent"><span>Account management</span></a>
-								<div>
-									<ul>
-										<li>
-											<%= link_to "Accounts", users_path%>
-										</li>
-										<li>
-											<%= link_to "New account", new_user_path%>
-										</li>
-									</ul>
-								</div>
-							</li>
-
-							<li>
-								<a href="#" class="parent"><span>Shops management</span></a>
-								<div>
-									<ul>
-										<li>
-											<%= link_to "Shops", shops_path%>
-										</li>
-										<li>
-											<%= link_to "New shop", new_shop_path%>
-										</li>
-										<li>
-											<%= link_to "Shop categories", shop_categories_path%>
-										</li>
-										<li>
-											<%= link_to "New shop category", new_shop_category_path%>
-										</li>
-									</ul>
-								</div>
-
-							</li>
-							<li>
-								<a href="#" class="parent"><span>News management</span></a>
-								<div>
-									<ul>
-										<li>
-											<%= link_to "News", news_index_path%>
-										</li>
-										<li>
-											<%= link_to "New news", new_news_path%>
-										</li>
-									</ul>
-								</div>
-
-							</li>
-
-							<li>
-								<a href="#"><span>Sub Item 3</span></a>
-							</li>
-
-						</ul>
-					</div>
-				</li>
-				<li>
-					<a href="<%= user_path(current_user) %>"><span>Profile</span></a>
-				</li>
-				<% end %>
-			</ul>
-
-		</div>
-
+		<%= render('layouts/menu') %>
 		<div class="break"></div>
 	</div>
 	<!-- END header -->

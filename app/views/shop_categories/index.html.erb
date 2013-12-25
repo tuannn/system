@@ -1,8 +1,11 @@
 <div class = "basecontent">
 	<h2> List of shop categories</h2>
+	<p align="right">
+		<%= link_to "Add new", new_shop_category_path %>
+	</p>
 	<%= will_paginate @categories%>
-	
+
 	<%= render('categorieslist') %>
-	
+
 	<%= will_paginate @categories%>
 </div>

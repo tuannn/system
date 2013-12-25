@@ -37,9 +37,18 @@ class Ability
       can :manage, User
       can :manage, Shop
     when "member"  
-      can :manage, Shop
+      can :manage, Shop do |shop|
+        @user.id == shop.user.id
+      end
+      can :manage, User do |current|
+        @user.id ==current.id
+      end
+      can :manage, News do |news|
+        @user.id == news.user.id 
+      end  
     else
-      can :read, :all     
+      can :read, :all
+         
     end
   end
 end

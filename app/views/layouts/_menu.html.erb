@@ -1,0 +1,68 @@
+<div id="menu">
+	<ul class="menu">
+		<li>
+			<a href="<%= root_path %>" class="parent"><span>Home</span></a>
+
+		</li>
+		<li>
+			<a href="<%= shopindex_path %>" class="parent"><span>Shops</span></a>
+			<div>
+				<ul>
+					<% ShopCategory.order(:name).all.each do |category| %>
+					<li>
+						<a href="<%= shopindex_path(id: category.id) %>"><span><%= category.name %></span></a>
+
+					</li>
+					<% end %>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<a href="#"><span>Help</span></a>
+		</li>
+		<li>
+			<a href="#"><span>Contacts</span></a>
+		</li>
+		<% if user_signed_in? %>
+		<li>
+			<span>Management</span>
+			<div>
+				<ul>
+					<% if current_user.role == "admin" || current_user.role == "moderator" %>
+					<li>
+						<a href="<%= users_path %>"><span>Accounts</span></a>
+					</li>
+					<% end %>
+
+					<li>
+						<a href="<%= shops_path %>"><span>Shops</span></a>
+					</li>
+					<% if current_user.role == "admin" || current_user.role == "moderator" %>
+					<li>
+						<a href="<%= shop_categories_path %>"><span>Categories</span></a>
+					</li>
+					<% end %>
+
+					<li>
+						<a href="<%= news_index_path %>"><span>News</span></a>
+					</li>
+
+					<li>
+						<a href="<%= new_news_path %>"><span>New news</span></a>
+					</li>
+
+				</ul>
+			</div>
+		</li>
+		<li>
+			<a href="<%= user_path(current_user) %>"><span>Profile</span></a>
+		</li>
+		<% end %>
+	</ul>
+
+</div>
+<div class="break"></div>
+</div>
+<!-- END header -->
+<!-- BEGIN content -->
+<div id="content">

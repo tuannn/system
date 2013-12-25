@@ -1,0 +1,17 @@
+<div id="attachmentform">
+	<%= form_for [@shop, @shop_attachment], :html => { :multipart => true } do |f| %>
+	<table>
+		<tr>
+			<td><%= f.label :attachfile %></td>
+			<td><%= f.file_field :attachfile %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :description %></td>
+			<td><%= f.text_area :description %></td>
+		</tr>
+		<tr>
+			<td colspan="2"> <%= f.submit "Upload" %> </td>
+		</tr>
+	</table>
+	<% end %>
+</div>

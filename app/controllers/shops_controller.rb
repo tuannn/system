@@ -38,7 +38,8 @@ class ShopsController < ApplicationController
     respond_to do |format|
       if @shop
         @galleries = @shop.shop_galleries.paginate(page: params[:page], per_page: 6)
-        @news_all = @shop.news.order(:created_at).paginate(page: params[:page], per_page: 20)
+        @news_all = @shop.news.order('created_at DESC').paginate(page: params[:page], per_page: 20)
+        @attachments = @shop.shop_attachments.paginate(page: params[:page], per_page: 15)
         format.html
       else
         format.html { redirect_to root_path, notice: "Shop is not existed" }
